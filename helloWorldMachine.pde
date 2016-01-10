@@ -3,10 +3,13 @@ import controlP5.*;
 PFont f;                           
 String[] fonts;
 int i = 0;
-String phrase = "Hello World!";
+String phrase = "Hello, World!";
+String fontname = "";
+
 ControlP5 cp_5;
 Knob myKnobAA;
 int font = 100;
+
 
 void setup() {
   size(800,600);
@@ -41,7 +44,7 @@ void save_to_file(String desc) {
 
 void rndFont() {
   int i = int(random(fonts.length));
-  String fontname = fonts[font];
+  fontname = fonts[font];
   //println(fontname + " " + i);
   f = createFont(fontname,32,true);   
   textFont(f,140);
@@ -86,5 +89,5 @@ void write_text(String text) {
 void draw() {
   set_deco();
   write_text(phrase);
-  //save_to_file(fontname);
+  save_to_file(fontname);
 }
